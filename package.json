@@ -29,7 +29,9 @@
     "three": "^0.180.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.0",
     "@babel/plugin-syntax-import-meta": "^7.10.4",
+    "babel-preset-expo": "~11.0.0",
     "@types/react": "~19.1.0",
     "@types/three": "^0.180.0",
     "typescript": "~5.9.2"
