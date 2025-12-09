@@ -1,0 +1,38 @@
+{
+  "name": "saba-takes-flight",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "build:web": "expo export:web",
+    "preview:web": "npx serve web-build"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.4.0",
+    "@supabase/supabase-js": "^2.81.1",
+    "expo": "~54.0.13",
+    "expo-asset": "^12.0.9",
+    "expo-gl": "^16.0.7",
+    "expo-linear-gradient": "^15.0.7",
+    "expo-status-bar": "~3.0.8",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-native": "0.81.4",
+    "react-native-web": "^0.21.0",
+    "react-native-web-webview": "^1.0.2",
+    "react-native-webview": "^13.16.0",
+    "react-native-youtube-iframe": "^2.4.1",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-import-meta": "^7.10.4",
+    "@types/react": "~19.1.0",
+    "@types/three": "^0.180.0",
+    "typescript": "~5.9.2"
+  },
+  "private": true
+}
