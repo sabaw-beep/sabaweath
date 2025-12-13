@@ -6,6 +6,7 @@ import { Globe } from './components/Globe';
 import { VideoListScreen } from './components/VideoListScreen';
 import { VideoModal } from './components/VideoModal';
 import { ChatBot } from './components/ChatBot';
+import { BioModal } from './components/BioModal';
 import { Location, Video } from './data/locations';
 
 type AppState = 'globe' | 'videoList';
@@ -49,6 +50,7 @@ export default function App() {
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
   const [isVideoModalVisible, setIsVideoModalVisible] = useState(false);
   const [isChatBotVisible, setIsChatBotVisible] = useState(false);
+  const [isBioModalVisible, setIsBioModalVisible] = useState(false);
 
   const handleLocationClick = (location: Location) => {
     setSelectedLocation(location);
@@ -100,6 +102,15 @@ export default function App() {
             </Suspense>
           </ErrorBoundary>
           
+          {/* About Button */}
+          <TouchableOpacity
+            style={styles.aboutButton}
+            onPress={() => setIsBioModalVisible(true)}
+            activeOpacity={0.8}
+          >
+            <Text style={styles.aboutButtonText}>About</Text>
+          </TouchableOpacity>
+
           {/* Title Overlay */}
           <View style={styles.titleOverlay}>
             <Text style={styles.title}>Saba Takes Flight</Text>
@@ -146,6 +157,11 @@ export default function App() {
         visible={isChatBotVisible}
         onClose={() => setIsChatBotVisible(false)}
       />
+
+      <BioModal
+        visible={isBioModalVisible}
+        onClose={() => setIsBioModalVisible(false)}
+      />
     </View>
   );
 }
@@ -164,11 +180,35 @@ const styles = StyleSheet.create({
   },
   titleOverlay: {
     position: 'absolute',
-    top: 60,
+    top: 115,
     left: 20,
     right: 20,
     zIndex: 10,
     alignItems: 'center',
+  },
+  aboutButton: {
+    position: 'absolute',
+    top: 70,
+    left: 20,
+    zIndex: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  aboutButtonText: {
+    color: '#007bff',
+    fontSize: 14,
+    fontWeight: '600',
+    letterSpacing: 0.5,
   },
   title: {
     fontSize: 36,
